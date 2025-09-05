@@ -49,6 +49,15 @@ docker compose up --build
 
 ## 🎬 Live Demo Experience
 
+### 🎥 Demo Video
+> **5-Minute Full Demo**: Watch IntelliInspect in action from upload to real-time predictions
+
+https://github.com/user-attachments/assets/your-video-file.mp4
+
+*Upload your demo video to GitHub Issues or Releases, then copy the generated URL here*
+
+---
+
 ### 📂 Step 1: Upload Dataset (30 seconds)
 1. **Drag & Drop** any CSV file with manufacturing sensor data
 2. **Instant Analysis** - See metadata, pass rates, and time ranges
