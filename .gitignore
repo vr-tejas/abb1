@@ -1,0 +1,323 @@
+# =============================================================================
+# IntelliInspect - Comprehensive .gitignore
+# Angular + .NET Core + Python + Docker Multi-Service Project
+# =============================================================================
+
+# ============= GENERAL =============
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.log
+*.tmp
+*.temp
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============= NODE.JS / ANGULAR =============
+# Dependencies
+frontend/node_modules/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Runtime data
+frontend/pids
+frontend/*.pid
+frontend/*.seed
+frontend/*.pid.lock
+
+# Coverage directory used by tools like istanbul
+frontend/coverage/
+frontend/.nyc_output
+
+# Angular build outputs
+frontend/dist/
+frontend/tmp/
+frontend/.angular/
+
+# Angular cache
+frontend/.sass-cache/
+frontend/connect.lock
+frontend/typings
+
+# Environment files (keep .example files)
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ============= .NET CORE / ASP.NET =============
+# Build results
+backend/bin/
+backend/obj/
+backend/out/
+
+# User-specific files
+backend/*.user
+backend/*.userosscache
+backend/*.sln.docstates
+
+# Build Results of an ATL Project
+backend/[Dd]ebugPS/
+backend/[Rr]eleasePS/
+backend/dlldata.c
+
+# .NET Core
+backend/project.lock.json
+backend/project.fragment.lock.json
+backend/artifacts/
+
+# Entity Framework
+backend/Migrations/
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/*.db-shm
+backend/*.db-wal
+
+# ASP.NET Scaffolding
+backend/ScaffoldingReadMe.txt
+
+# StyleCop
+backend/StyleCopReport.xml
+
+# Files built by Visual Studio
+backend/*_i.c
+backend/*_p.c
+backend/*_h.h
+backend/*.ilk
+backend/*.meta
+backend/*.obj
+backend/*.iobj
+backend/*.pch
+backend/*.pdb
+backend/*.ipdb
+backend/*.pgc
+backend/*.pgd
+backend/*.rsp
+backend/*.sbr
+backend/*.tlb
+backend/*.tli
+backend/*.tlh
+backend/*.tmp_proj
+backend/*_wpftmp.csproj
+backend/*.log
+backend/*.vspscc
+backend/*.vssscc
+backend/.builds
+backend/*.pidb
+backend/*.svclog
+backend/*.scc
+
+# ============= PYTHON / FASTAPI =============
+# Byte-compiled / optimized / DLL files
+ml-service/__pycache__/
+ml-service/*.py[cod]
+ml-service/*$py.class
+
+# C extensions
+ml-service/*.so
+
+# Distribution / packaging
+ml-service/.Python
+ml-service/build/
+ml-service/develop-eggs/
+ml-service/dist/
+ml-service/downloads/
+ml-service/eggs/
+ml-service/.eggs/
+ml-service/lib/
+ml-service/lib64/
+ml-service/parts/
+ml-service/sdist/
+ml-service/var/
+ml-service/wheels/
+ml-service/pip-wheel-metadata/
+ml-service/share/python-wheels/
+ml-service/*.egg-info/
+ml-service/.installed.cfg
+ml-service/*.egg
+ml-service/MANIFEST
+
+# PyInstaller
+ml-service/*.manifest
+ml-service/*.spec
+
+# Unit test / coverage reports
+ml-service/htmlcov/
+ml-service/.tox/
+ml-service/.nox/
+ml-service/.coverage
+ml-service/.coverage.*
+ml-service/.cache
+ml-service/nosetests.xml
+ml-service/coverage.xml
+ml-service/*.cover
+ml-service/*.py,cover
+ml-service/.hypothesis/
+ml-service/.pytest_cache/
+
+# Virtual environments
+ml-service/env/
+ml-service/venv/
+ml-service/ENV/
+ml-service/env.bak/
+ml-service/venv.bak/
+
+# Jupyter Notebook
+ml-service/.ipynb_checkpoints
+
+# IPython
+ml-service/profile_default/
+ml-service/ipython_config.py
+
+# pyenv
+ml-service/.python-version
+
+# pipenv
+ml-service/Pipfile.lock
+
+# PEP 582
+ml-service/__pypackages__/
+
+# Celery stuff
+ml-service/celerybeat-schedule
+ml-service/celerybeat.pid
+
+# SageMath parsed files
+ml-service/*.sage.py
+
+# Spyder project settings
+ml-service/.spyderproject
+ml-service/.spyproject
+
+# Rope project settings
+ml-service/.ropeproject
+
+# mkdocs documentation
+ml-service/site
+
+# mypy
+ml-service/.mypy_cache/
+ml-service/.dmypy.json
+ml-service/dmypy.json
+
+# Pyre type checker
+ml-service/.pyre/
+
+# ============= DOCKER =============
+# Docker build context files we don't want to send
+.dockerignore
+
+# Container volumes (if any local mounting)
+docker-volumes/
+
+# ============= DATABASE =============
+# SQLite databases (keep schema, ignore data)
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# ============= UPLOADED FILES =============
+# User uploaded datasets (keep samples)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Generated datasets (keep a few samples)
+dataset/*.csv
+!dataset/sample_quality_data.csv
+!dataset/manufacturing_quality_700_rows.csv
+
+# ============= LOGS =============
+*.log
+logs/
+*.log.*
+
+# ============= ENVIRONMENT & SECRETS =============
+.env
+.env.local
+.env.*.local
+appsettings.Development.json
+appsettings.Staging.json
+secrets.json
+
+# ============= TEMPORARY FILES =============
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.#*
+
+# ============= OS SPECIFIC =============
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Linux
+*~
+.nfs*
+
+# ============= IDE SPECIFIC =============
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json.example
+!.vscode/launch.json.example
+!.vscode/extensions.json.example
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+
+# ============= BUILD ARTIFACTS =============
+# Distribution files
+dist/
+build/
+out/
+
+# Dependency directories that shouldn't be committed
+node_modules/
+vendor/
+
+# ============= COVERAGE & TESTING =============
+coverage/
+test-results/
+TestResults/
+.nyc_output/
+
+# ============= DOCUMENTATION BUILD =============
+docs/build/
+docs/_build/
+
+# =============================================================================
+# END OF .gitignore
+# Keep this file updated as the project grows
+# =============================================================================
