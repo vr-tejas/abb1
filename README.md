@@ -50,9 +50,9 @@ docker compose up --build
 ## 🎬 Live Demo Experience
 
 ### 🎥 Demo Video
-> **5-Minute Full Demo**: Watch IntelliInspect in action from upload to real-time predictions
+> **Full Demo**: Watch IntelliInspect in action from upload to real-time predictions
 
-https://github.com/user-attachments/assets/your-video-file.mp4
+https://github.com/user-attachments/assets/616addaa-0781-4f6c-b8c4-bbb69c652389
 
 *Upload your demo video to GitHub Issues or Releases, then copy the generated URL here*
 
