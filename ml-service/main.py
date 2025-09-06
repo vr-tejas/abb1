@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
-import xgboost as xgb
+from xgboost import XGBClassifier
 import json
 import uuid
 from datetime import datetime
@@ -151,14 +151,28 @@ async def train_model(request: TrainingRequest):
         print(f"DEBUG: Test target distribution: {pd.Series(y_test).value_counts().to_dict()}")
         
         # Train XGBoost model with better parameters for small datasets
-        model = xgb.XGBClassifier(
-            random_state=42, 
-            eval_metric='logloss',
-            max_depth=3,  # Prevent overfitting on small data
-            n_estimators=50,  # Fewer trees for small data
-            learning_rate=0.1
+        
+        model = XGBClassifier(
+            random_state=42,
+            eval_metric="logloss",
+            use_label_encoder=False,   # suppress old warnings
+            n_estimators=300,          # more trees for better performance
+            learning_rate=0.05,        # smaller step → smoother learning
+            max_depth=6,               # allow deeper trees
+            subsample=0.8,             # use 80% of data per tree
+            colsample_bytree=0.8,      # use 80% of features per tree
+            gamma=1,                   # min loss reduction for splits
+            reg_alpha=0.1,             # L1 regularization
+            reg_lambda=1.0             # L2 regularization
         )
-        model.fit(X_train, y_train)
+
+        model.fit(
+            X_train,
+            y_train,
+            eval_set=[(X_test, y_test)],   # so you see validation during training
+            verbose=True
+        )
+
         
         # Make predictions
         y_pred = model.predict(X_test)
